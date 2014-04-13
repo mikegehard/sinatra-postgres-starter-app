@@ -17,13 +17,12 @@ delete the `.gitsave` file.
 ## Development
 1. `bundle install`
 1. Create a database by running `psql -d postgres -f scripts/create_databases.sql`
-1. Populate the database environment variables in the currently running terminal
-by running `source .env`.
-1. Run the migrations in the development database using `sequel -m migrations $DATABASE_URL_DEVELOPMENT`
-1. Run the migrations in the test database using `sequel -m migrations $DATABASE_URL_TEST`
+1. Run the migrations in the development database using `rake db:migrate`. If you would
+like to migrate to a specific version you can do so using this rake task. Run `rake -T` for
+details.
 1. `rerun rackup`
     * running rerun will reload app when file changes are detected
-1. Run tests using `rspec`.
+1. Run tests using `rspec`. The tests will clean up the database before each test run.
 
 ## Migrations on Heroku
 To run the migrations on heroku, run `heroku run 'sequel -m migrations $DATABASE_URL'`. If you
