@@ -17,6 +17,8 @@ delete the `.gitsave` file.
 ## Development
 1. `bundle install`
 1. Create a database by running `psql -d postgres -f scripts/create_databases.sql`
+1. Populate the database environment variables in the currently running terminal
+by running `source .env`.
 1. Run the migrations in the development database using `sequel -m migrations $DATABASE_URL_DEVELOPMENT`
 1. Run the migrations in the test database using `sequel -m migrations $DATABASE_URL_TEST`
 1. `rerun rackup`
