@@ -12,7 +12,8 @@ There are a few things you need to change for your application:
 and test databases. This file is ignored by git (see .gitignore) to protect your secrets
 from the outside world.
 1. Add your migrations to the `migrations` folder. Once you have one migration there, you can
-delete the `.gitsave` file.
+delete the `.gitsave` file. You should also uncomment the line in `spec/spec_helper.rb` so that
+your databases will be cleaned up between test runs.
 
 ## Development
 1. `bundle install`
