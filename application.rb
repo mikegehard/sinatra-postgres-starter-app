@@ -21,6 +21,8 @@ class Application < Sinatra::Application
 
   post '/' do
     email = params[:Email]
+    password = params[:Password]
+    UserRepository.create(email,password)
     erb :index, locals:{:email => email}
   end
 end

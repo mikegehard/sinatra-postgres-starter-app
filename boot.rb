@@ -6,8 +6,10 @@ require 'dotenv'
 
 Dotenv.load
 
-environment = ENV["RACK_ENV"] || "development"
+connection_string = ENV["DATABASE_URL"] || ENV["DATABASE_URL_TEST"]
 
-connection_string = ENV["DATABASE_URL"] || ENV["DATABASE_URL_#{environment.upcase}"]
+require 'lib/user_repository'
+
+UserRepository.attach_db(Sequel.connect(ENV['DATABASE_URL']))
 
 DB = Sequel.connect(connection_string)
