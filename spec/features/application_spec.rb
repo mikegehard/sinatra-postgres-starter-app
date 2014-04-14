@@ -16,6 +16,6 @@ feature 'Homepage' do
     fill_in 'Email', with: 'joe@example.com'
     fill_in 'Password', with: 'Password'
     click_on 'Register'
-    expect(page).to have_content 'Hello joe@example.com'
+    expect(page).to have_content 'Welcome, joe@example.com'
   end
 end
