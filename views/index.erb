@@ -1,3 +1,8 @@
 <p>
-  Welcome!
+  <% if email %>
+      Hello <%= email %>
+  <% else %>
+      Welcome!
+  <% end %>
 </p>
+<a href="/register">Register</a>

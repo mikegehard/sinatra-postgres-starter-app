@@ -12,6 +12,15 @@ class Application < Sinatra::Application
   end
 
   get '/' do
-    erb :index
+    erb :index, locals: {:email => nil}
+  end
+
+  get '/register' do
+    erb :register
+  end
+
+  post '/' do
+    email = params[:Email]
+    erb :index, locals:{:email => email}
   end
 end
